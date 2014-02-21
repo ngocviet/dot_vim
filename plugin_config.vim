@@ -27,7 +27,7 @@ let g:space_disable_select_mode = 1
 " ---------------
 let g:syntastic_enable_signs = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_mode_map = { 'mode': 'active',
+let g:syntastic_mode_map = { 'mode': 'passive',
                            \ 'active_filetypes': [],
                            \ 'passive_filetypes': ['scss'] }
 
@@ -42,7 +42,7 @@ nnoremap <leader>nn :NERDTreeToggle<CR>
 nnoremap <leader>nf :NERDTreeFind<CR>
 let g:NERDTreeShowBookmarks = 1
 let g:NERDTreeChDirMode = 2 " Change the NERDTree directory to the root node
-let g:NERDTreeMinimalUI = 1
+" let g:NERDTreeMinimalUI = 1
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType")
   \&& b:NERDTreeType == "primary") | q | endif
 
@@ -154,7 +154,7 @@ nnoremap cob :normal cs{{<cr>
 
 " ---------------
 " Gifl - Google I'm Feeling Lucky URL Grabber
-" ---------------
+" ---------------  
 let g:LuckyOutputFormat='markdown'
 " I sometimes run vim without ruby support.
 let g:GIFLSuppressRubyWarning = 1
@@ -321,22 +321,23 @@ let g:rails_gem_projections = {
 " ---------------
 " UltiSnips
 " ---------------
-let g:UltiSnipsSnippetDirectories=["MyUltiSnips"]
-function! g:UltiSnips_Complete()
-  call UltiSnips_JumpForwards()
-  if g:ulti_jump_forwards_res == 0
-    call UltiSnips_ExpandSnippet()
-    if g:ulti_expand_res == 0
-      if pumvisible()
-        return "\<C-n>"
-      else
-        return "\<TAB>"
-      endif
-    endif
-  endif
-  return ""
-endfunction
+" let g:UltiSnipsSnippetDirectories=["MyUltiSnips"]
+" function! g:UltiSnips_Complete()
+"   call UltiSnips_JumpForwards()
+"   if g:ulti_jump_forwards_res == 0
+"     call UltiSnips_ExpandSnippet()
+"     if g:ulti_expand_res == 0
+"       if pumvisible()
+"         return "\<C-n>"
+"       else
+"         return "\<TAB>"
+"       endif
+"     endif
+"   endif
+"   return ""
+" endfunction
 
+let g:UltiSnipsSnippetsDir = "C:\Users\txkhoa\vimfiles\MyUltiSnips"
 au BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
@@ -371,3 +372,13 @@ let g:turbux_command_cucumber = 'spring cucumber'
 let g:tcommentMaps = 0
 nnoremap <silent><leader>cc :TComment<CR>
 vnoremap <silent><leader>cc :TComment<CR>
+
+
+" ---------------
+" vimwiki
+" ---------------
+let wiki_1 = {}
+let wiki_1.path = 'D:\onlinedrive\BoxSync\vimwiki'
+" let wiki_1.html_template = 'D:\onlinedrive\BoxSync\vimwiki_html\templates\header.tpl'
+let wiki_1.nested_syntaxes = {'python':'python', 'c++':'cpp'}
+let g:vimwiki_list = [wiki_1]

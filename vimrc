@@ -24,3 +24,7 @@ source ~/.vim/plugin_config.vim
 source ~/.vim/functions.vim
 " Auto commands.
 source ~/.vim/autocmds.vim
+
+nnoremap ,cd :cd %:p:h<CR>:pwd<CR>
+filetype off
+filetype indent plugin on

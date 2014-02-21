@@ -50,7 +50,8 @@ endif
 " Behaviors
 " ---------------
 syntax enable
-set backup             " Turn on backups
+set noswapfile
+set nobackup             " Turn on backups
 set autoread           " Automatically reload changes if detected
 set wildmenu           " Turn on WiLd menu
 set hidden             " Change buffer - without saving
@@ -71,9 +72,9 @@ set switchbuf=useopen  " Switch to an existing buffer if one exists
 " ---------------
 " Text Format
 " ---------------
-set tabstop=2
+set tabstop=4
 set backspace=indent,eol,start " Delete everything with backspace
-set shiftwidth=2 " Tabs under smart indent
+set shiftwidth=4 " Tabs under smart indent
 set cindent
 set autoindent
 set smarttab
