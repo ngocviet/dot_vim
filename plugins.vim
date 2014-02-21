@@ -27,7 +27,7 @@ let g:space_disable_select_mode = 1
 let g:syntastic_enable_signs = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_loc_list_height = 5
-let g:syntastic_mode_map = { 'mode': 'active',
+let g:syntastic_mode_map = { 'mode': 'passive',
                            \ 'active_filetypes': [],
                            \ 'passive_filetypes': [] }
 let g:syntastic_html_checkers = ['handlebars']
@@ -43,7 +43,7 @@ let g:syntastic_full_redraws = 1
 nnoremap <leader>nn :NERDTreeToggle<CR>
 nnoremap <leader>nf :NERDTreeFind<CR>
 let g:NERDTreeShowBookmarks = 1
-let g:NERDTreeChDirMode = 1
+let g:NERDTreeChDirMode = 2
 let g:NERDTreeMinimalUI = 1
 " Close Vim if NERDTree is the last buffer
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType")
@@ -459,3 +459,11 @@ nmap N <Plug>(anzu-N)
 nmap * <Plug>(anzu-star)
 nmap # <Plug>(anzu-sharp)
 let g:airline#extensions#anzu#enabled = 1
+ ---------------
+" vimwiki
+" ---------------
+let wiki_1 = {}
+let wiki_1.path = 'D:\onlinedrive\BoxSync\vimwiki'
+" let wiki_1.html_template = 'D:\onlinedrive\BoxSync\vimwiki_html\templates\header.tpl'
+let wiki_1.nested_syntaxes = {'python':'python', 'c++':'cpp'}
+let g:vimwiki_list = [wiki_1]
