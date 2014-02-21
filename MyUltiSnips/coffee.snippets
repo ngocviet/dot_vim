@@ -1,0 +1,85 @@
+snippet property "Create a computed property"
+(->
+  $0
+).property('${2:propertyName}')
+endsnippet
+
+snippet p "Create a computed property (p)"
+(->
+  $0
+).property('${2:propertyName}')
+endsnippet
+
+snippet observes "Create an observer"
+observes${1:observerName}: (->
+  $0
+).observes('${2:observerName}')
+endsnippet
+
+snippet g "Getter" i
+get('${1:propertyName}')$0
+endsnippet
+
+snippet gv "Visual this getter" i
+@get('${VISUAL}')$0
+endsnippet
+
+snippet @ga "Get this and assign" i
+$1 = @get('${1:propertyName}')$0
+endsnippet
+
+snippet @_s "Super with arguments" i
+@_super(${1:arguments...})
+endsnippet
+
+snippet set "Setter"
+set('${1:propertyName}', ${2:value})
+endsnippet
+
+snippet s "Setter (s)"
+set('${1:propertyName}', ${2:value})
+endsnippet
+
+snippet toggle "toggleProperty"
+toggleProperty('${1:propertyName}')
+endsnippet
+
+snippet eld "Ember debug log"
+Ember.Logger.debug ${1:value}
+endsnippet
+
+snippet elda "Ember debug log arguments"
+Ember.Logger.debug arguments
+endsnippet
+
+snippet eli "Ember info log"
+Ember.Logger.info ${1:value}
+endsnippet
+
+snippet ele "Ember error log"
+Ember.Logger.error ${1:value}
+endsnippet
+
+snippet map "Map" w
+map (${2:itemName}) ->
+  $0
+endsnippet
+
+snippet reduce "Reduce" w
+reduce((memo, ${2:itemName}) ->
+  $0
+  memo
+, ${3:memo})
+endsnippet
+
+# -------------------------
+# Computed Property Aliases
+# -------------------------
+
+snippet alias "Computed property alias"
+Ember.computed.alias '${1:alias}'
+endsnippet
+
+snippet computed "Any computed macro"
+Ember.computed.${1:name} '${2:property}'
+endsnippet

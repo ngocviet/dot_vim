@@ -21,9 +21,9 @@ if has('win32') || has('win64')
 elseif has('gui_macvim')
   " MacVim
 
-  " Custom Menlo font for Powerline
-  " From: https://github.com/Lokaltog/vim-powerline/wiki/Patched-fonts
-  set guifont=Menlo\ for\ Powerline:h12
+  " Custom Source Code font for Powerline
+  " From: https://github.com/Lokaltog/powerline-fonts
+  set guifont=Source\ Code\ Pro\ for\ Powerline:h12
 
   " Hide Toolbar in MacVim
   if has("gui_running")
@@ -32,4 +32,14 @@ elseif has('gui_macvim')
 
   " Use option (alt) as meta key.
   set macmeta
+endif
+
+if has('macunix') || has('mac')
+  " Fix meta key for Mac
+  let c='a'
+  while c <= 'z'
+    exec "set <A-".c.">=\e".c
+    exec "imap \e".c." <A-".c.">"
+    let c = nr2char(1+char2nr(c))
+  endw
 endif

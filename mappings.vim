@@ -5,6 +5,7 @@
 " Set leader to ,
 " Note: This line MUST come before any <leader> mappings
 let mapleader=","
+let maplocalleader = "\\"
 
 " ---------------
 " Regular Mappings
@@ -45,38 +46,21 @@ nnoremap ` '
 " ---------------
 " Window Movement
 " ---------------
+nnoremap <silent> gh :WriteBufferIfNecessary<CR>:wincmd h<CR>
+nnoremap <silent> gj :WriteBufferIfNecessary<CR>:wincmd j<CR>
+nnoremap <silent> gk :WriteBufferIfNecessary<CR>:wincmd k<CR>
+nnoremap <silent> gl :WriteBufferIfNecessary<CR>:wincmd l<CR>
 
-" Here's a visual guide for moving between window splits.
 "   4 Window Splits
-"   --------
-"   g1 | g2
-"   ---|----
-"   g3 | g4
-"   -------
 "
-"   6 Window Splits
-"   -------------
-"   g1 | gt | g2
-"   ---|----|----
-"   g3 | gb | g4
-"   -------------
-nnoremap <silent> gh :wincmd h<CR>
-nnoremap <silent> gj :wincmd j<CR>
-nnoremap <silent> gk :wincmd k<CR>
-nnoremap <silent> gl :wincmd l<CR>
-" Upper left window
-nnoremap <silent> g1 :wincmd t<CR>
-" Upper right window
-nnoremap <silent> g2 :wincmd b<Bar>:wincmd k<CR>
-" Lower left window
-nnoremap <silent> g3 :wincmd t<Bar>:wincmd j<CR>
-" Lower right window
-nnoremap <silent> g4 :wincmd b<CR>
-
-" Top Middle
-nnoremap <silent> gt g2<Bar>:wincmd h<CR>
-" Bottom Middle
-nnoremap <silent> gb g3<Bar>:wincmd l<CR>
+"   -----------------
+"   g1 | g2 | g3 | g4
+"   -----------------
+nnoremap <silent> g1 :WriteBufferIfNecessary<CR>:wincmd t<CR>
+nnoremap <silent> g2 :WriteBufferIfNecessary<CR>:wincmd t<bar>:wincmd l<CR>
+nnoremap <silent> g3 :WriteBufferIfNecessary<CR>:wincmd t<bar>:wincmd l<bar>
+      \:wincmd l<CR>
+nnoremap <silent> g4 :WriteBufferIfNecessary<CR>:wincmd b<CR>
 
 " Previous Window
 nnoremap <silent> gp :wincmd p<CR>
@@ -124,27 +108,32 @@ nnoremap <leader>h *<C-O>
 " Toggle spelling mode with ,s
 nnoremap <silent> <leader>s :set spell!<CR>
 
-" Begin to edit any file in .vim directory
-nnoremap <leader>v :e ~/.vim/
-
 " Quickly switch to last buffer
 nnoremap <leader>, :e#<CR>
 
 " Underline the current line with '-'
-nnoremap <silent> <leader>ul :t.\|s/./-/g\|:nohls<cr>
+nnoremap <silent> <leader>ul :t.\|s/./-/\|:nohls<cr>
 
 " Underline the current line with '='
-nnoremap <silent> <leader>uul :t.\|s/./=/g\|:nohls<cr>
+nnoremap <silent> <leader>uul :t.\|s/./=/\|:nohls<cr>
+
+" Surround the commented line with lines.
+"
+" Example:
+"          # Test 123
+"          becomes
+"          # --------
+"          # Test 123
+"          # --------
+nnoremap <silent> <leader>cul :normal "lyy"lpwv$r-^"lyyk"lP<cr>
 
 " Format the entire file
 nnoremap <leader>fef mx=ggG='x
 
-" Wrap the current line
-nnoremap <leader>wl Vgq
-
 " Format a json file with Python's built in json.tool.
 " from https://github.com/spf13/spf13-vim/blob/3.0/.vimrc#L390
-nnoremap <leader>jt <Esc>:%!python -m json.tool<CR><Esc>:set filetype=json<CR>
+nnoremap <leader>jt <Esc>:%!underscore print<CR><Esc>:set filetype=json<CR>
+nnoremap <leader>jts <Esc>:%!underscore print --strict<CR><Esc>:set filetype=json<CR>
 
 " Split window vertically or horizontally *and* switch to the new split!
 nnoremap <silent> <leader>hs :split<Bar>:wincmd j<CR>
@@ -167,3 +156,6 @@ nnoremap Q @@
 " Removes doc lookup mapping because it's easy to fat finger and never useful.
 nnoremap K k
 vnoremap K k
+
+" Toggle paste mode with F5
+nnoremap <silent> <F5> :set paste!<CR>

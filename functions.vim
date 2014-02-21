@@ -115,6 +115,15 @@ nnoremap <silent> <leader>z :QuickSpellingFix<CR>
 command! -bar -range=% NotRocket execute
   \'<line1>,<line2>s/:\(\w\+\)\s*=>/\1:/e' . (&gdefault ? '' : 'g')
 
+" ------------------------------------
+" Convert .should rspec syntax to expect.
+" From: https://coderwall.com/p/o2oyrg
+" ------------------------------------
+command! -bar -range=% Expect execute
+  \'<line1>,<line2>s/\(\S\+\).should\(\s\+\)==\s*\(.\+\)' .
+  \'/expect(\1).to\2eq(\3)/e' .
+  \(&gdefault ? '' : 'g')
+
 " ---------------
 " Strip Trailing White Space
 " ---------------
@@ -136,7 +145,7 @@ function! StripTrailingWhiteSpaceAndSave()
   :write
 endfunction
 command! StripTrailingWhiteSpaceAndSave :call StripTrailingWhiteSpaceAndSave()<CR>
-nnoremap <silent>stw :silent! StripTrailingWhiteSpaceAndSave<CR>
+nnoremap <silent> <leader>stw :silent! StripTrailingWhiteSpaceAndSave<CR>
 
 " ---------------
 " Paste using Paste Mode
@@ -158,23 +167,31 @@ command! PasteWithPasteMode call PasteWithPasteMode()
 nnoremap <silent> <leader>p :PasteWithPasteMode<CR>
 
 " ---------------
-" Write Buffer
+" Write Buffer if Necessary
 "
-" Writes the current buffer unless we're the in QuickFix mode.
+" Writes the current buffer if it's needed, unless we're the in QuickFix mode.
 " ---------------
 
-function WriteBuffer()
+function WriteBufferIfNecessary()
+  if &modified && !&readonly
+    :write
+  endif
+endfunction
+command! WriteBufferIfNecessary call WriteBufferIfNecessary()
+
+function CRWriteIfNecessary()
   if &filetype == "qf"
+    " Execute a normal enter when in Quickfix list.
     execute "normal! \<enter>"
   else
-    :write
+    WriteBufferIfNecessary
   endif
 endfunction
 
 " Clear the search buffer when hitting return
 " Idea for MapCR from http://git.io/pt8kjA
 function! MapCR()
-  nnoremap <silent> <enter> :call WriteBuffer()<CR>
+  nnoremap <silent> <enter> :call CRWriteIfNecessary()<CR>
 endfunction
 call MapCR()
 
@@ -201,3 +218,21 @@ function! ListLeaders()
 endfunction
 
 command! ListLeaders :call ListLeaders()
+
+function! CopyMatches(reg)
+  let hits = []
+  %s//\=len(add(hits, submatch(0))) ? submatch(0) : ''/ge
+  let reg = empty(a:reg) ? '+' : a:reg
+  execute 'let @'.reg.' = join(hits, "\n") . "\n"'
+endfunction
+command! -register CopyMatches call CopyMatches(<q-reg>)
+
+function! YankLineWithoutNewline()
+  let l = line(".")
+  let c = col(".")
+  normal ^y$
+  " Clean up: restore previous search history, and cursor position
+  call cursor(l, c)
+endfunction
+
+nnoremap <silent>yl :call YankLineWithoutNewline()<CR>
