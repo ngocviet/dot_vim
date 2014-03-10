@@ -72,13 +72,22 @@ set switchbuf=useopen  " Switch to an existing buffer if one exists
 " ---------------
 " Text Format
 " ---------------
+"tab
+set noexpandtab
+set copyindent
+set preserveindent
+set softtabstop=0
+set shiftwidth=4
 set tabstop=4
-set backspace=indent,eol,start " Delete everything with backspace
-set shiftwidth=4 " Tabs under smart indent
-set cindent
-set autoindent
-set smarttab
-set expandtab
+
+"space
+" set tabstop=4
+" set backspace=indent,eol,start " Delete everything with backspace
+" set shiftwidth=4 " Tabs under smart indent
+" set cindent
+" set autoindent
+" set smarttab
+" set expandtab
 
 " ---------------
 " Searching
