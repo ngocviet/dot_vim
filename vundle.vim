@@ -18,6 +18,8 @@ Bundle 'gmarik/vundle'
 " Navigation
 Bundle 'ZoomWin'
 Bundle 'kien/ctrlp.vim'
+Bundle 'JazzCore/ctrlp-cmatcher'
+Bundle 'vim-scripts/bufexplorer.zip'
 " UI Additions
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'bling/vim-airline'
@@ -106,3 +108,7 @@ Bundle 'tpope/vim-repeat'
 Bundle 'mattn/webapi-vim'
 Bundle 'xolox/vim-misc'
 Bundle 'rizzatti/funcoo.vim'
+" My Needed Plugin
+Bundle 'vim-scripts/vimwiki'
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'rstacruz/sparkup'
