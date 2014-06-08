@@ -6,14 +6,14 @@
 " Vundle
 " ---------------
 command! ReloadVundle source ~/.vim/vundle.vim
-function BundleReloadAndRun(command)
+function PluginReloadAndRun(command)
   :ReloadVundle
   execute a:command
 endfunction
 
-nnoremap <Leader>bi :call BundleReloadAndRun("BundleInstall")<CR>
-nnoremap <Leader>bu :call BundleReloadAndRun("BundleInstall!")<CR>
-nnoremap <Leader>bc :call BundleReloadAndRun("BundleClean")<CR>
+nnoremap <Leader>pi :call PluginReloadAndRun("PluginInstall")<CR>
+nnoremap <Leader>pu :call PluginReloadAndRun("PluginInstall!")<CR>
+nnoremap <Leader>pc :call PluginReloadAndRun("PluginClean")<CR>
 
 " ---------------
 " space.vim
@@ -30,7 +30,6 @@ let g:syntastic_loc_list_height = 5
 let g:syntastic_mode_map = { 'mode': 'active',
                            \ 'active_filetypes': [],
                            \ 'passive_filetypes': [] }
-let g:syntastic_html_checkers = ['handlebars']
 
 " Hat tip http://git.io/SPIBfg
 let g:syntastic_error_symbol = '✗'
@@ -256,10 +255,10 @@ let g:signify_sign_overwrite = 0
 " vim-startify
 " ---------------
 let g:startify_list_order = [
-        \ ['   Recent'],
-        \ 'files',
         \ ['   Last modified'],
         \ 'dir',
+        \ ['   Recent'],
+        \ 'files',
         \ ]
 let g:startify_skiplist = [
             \ 'COMMIT_EDITMSG',
@@ -285,6 +284,8 @@ autocmd VimEnter *
             \ endif
 " Keep NERDTree from opening a split when startify is open
 autocmd FileType startify setlocal buftype=
+
+let g:startify_recursive_dir = 1
 
 " ---------------
 " vim-togglecursor

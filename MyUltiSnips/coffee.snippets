@@ -1,10 +1,4 @@
-snippet property "Create a computed property"
-(->
-  $0
-).property('${2:propertyName}')
-endsnippet
-
-snippet p "Create a computed property (p)"
+snippet p "Create a computed property"
 (->
   $0
 ).property('${2:propertyName}')
@@ -20,6 +14,12 @@ snippet o "Create an observer"
 observes${1:observerName}: (->
   $0
 ).observes('${2:observerName}')
+endsnippet
+
+snippet on "Create an 'on' function"
+(->
+  $0
+).on('${2:propertyName}')
 endsnippet
 
 snippet g "Getter" i
@@ -66,6 +66,10 @@ snippet ele "Ember error log"
 Ember.Logger.error ${1:value}
 endsnippet
 
+snippet ale "App error log"
+App.Logger.error ${1:value}
+endsnippet
+
 snippet map "Map" w
 map (${2:itemName}) ->
   $0
@@ -82,10 +86,18 @@ endsnippet
 # Computed Property Aliases
 # -------------------------
 
+snippet computed "Any computed macro"
+Ember.computed.${1:name} '${2:property}'
+endsnippet
+
+snippet c "Any computed macro (c)"
+Ember.computed.${1:name} '${2:property}'
+endsnippet
+
 snippet alias "Computed property alias"
 Ember.computed.alias '${1:alias}'
 endsnippet
 
-snippet computed "Any computed macro"
-Ember.computed.${1:name} '${2:property}'
+snippet oneWay "oneWay computed macro"
+Ember.computed.oneWay '${2:property}'
 endsnippet
