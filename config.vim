@@ -79,6 +79,7 @@ set preserveindent
 set softtabstop=0
 set shiftwidth=4
 set tabstop=4
+set ff=unix
 
 "space
 " set tabstop=4
@@ -88,6 +89,10 @@ set tabstop=4
 " set autoindent
 " set smarttab
 " set expandtab
+set smartindent
+set tabstop=4
+set shiftwidth=4
+set expandtab
 
 " ---------------
 " Searching
@@ -106,23 +111,23 @@ set wildignore+=*.o,*.obj,*.exe,*.so,*.dll,*.pyc,.svn,.hg,.bzr,.git,
 set showmatch   " Show matching brackets.
 set matchtime=2 " How many tenths of a second to blink
 " Show invisible characters
-set list
+" set list
 
 " Show trailing spaces as dots and carrots for extended lines.
 " From Janus, http://git.io/PLbAlw
 
 " Reset the listchars
-set listchars=""
+" set listchars=""
 " make tabs visible
-set listchars=tab:▸▸
+" set listchars=tab:▸▸
 " show trailing spaces as dots
-set listchars+=trail:.
+" set listchars+=trail:.
 " The character to show in the last column when wrap is off and the line
 " continues beyond the right of the screen
-set listchars+=extends:>
+" set listchars+=extends:>
 " The character to show in the last column when wrap is off and the line
 " continues beyond the right of the screen
-set listchars+=precedes:<
+" set listchars+=precedes:<
 
 " ---------------
 " Sounds
