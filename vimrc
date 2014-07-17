@@ -26,5 +26,6 @@ source ~/.vim/functions.vim
 source ~/.vim/autocmds.vim
 
 nnoremap ,cd :cd %:p:h<CR>:pwd<CR>
+nnoremap ,lcd :lcd %:p:h<CR>:pwd<CR>
 filetype off
 filetype indent plugin on
