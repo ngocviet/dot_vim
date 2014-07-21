@@ -248,8 +248,8 @@ let g:ycm_filetype_specific_completion_to_disable = {
 " --------------------------------------------
 " Make YouCompleteMe compatible with UltiSnips
 " --------------------------------------------
-let g:ycm_key_list_select_completion ['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion ['<C-p>', '<Up>']
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 let g:SuperTabDefaultCompletionType = '<C-n>'
 
 " UltiSnips
