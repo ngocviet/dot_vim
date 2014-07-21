@@ -34,7 +34,6 @@ Bundle 'mbbill/undotree'
 Bundle 'jscakmeister/vim-togglecursor'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'vim-scripts/ShowMarks'
-Bundle 'vim-scripts/visual_studio.vim'
 " Commands
 Bundle 'mileszs/ack.vim'
 Bundle 'rstacruz/sparkup',{'rtp': 'vim'}

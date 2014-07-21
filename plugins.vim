@@ -101,6 +101,11 @@ nnoremap <silent> <leader>wo :ZoomWin<CR>
 " Ensure Ctrl-P isn't bound by default
 let g:ctrlp_map = ''
 
+" ---------------
+" ctrlp cmatcher
+" ---------------
+let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
+
 " Ensure max height isn't too large. (for performance)
 let g:ctrlp_max_height = 10
 " Fix fix new windows opening in split from startify
