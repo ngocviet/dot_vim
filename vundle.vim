@@ -31,7 +31,7 @@ Bundle 'nanotech/jellybeans.vim'
 Bundle 'mhinz/vim-signify'
 Bundle 'mhinz/vim-startify'
 Bundle 'mbbill/undotree'
-Bundle 'jscakmeister/vim-togglecursor'
+Bundle 'jszakmeister/vim-togglecursor'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'vim-scripts/ShowMarks'
 " Commands
