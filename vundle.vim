@@ -76,6 +76,7 @@ Bundle 'Valloric/YouCompleteMe'
 Bundle 'SirVer/ultisnips'
 Bundle 'vim-scripts/taglist.vim'
 Bundle 'mutewinter/vim-autoreadwatch'
+Bundle 'majutsushi/tagbar'
 " Language Additions
 "   Ruby
 Bundle 'vim-ruby/vim-ruby'
