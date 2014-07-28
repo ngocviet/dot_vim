@@ -122,3 +122,6 @@ Bundle 'xolox/vim-misc'
 Bundle 'mnick/vim-pomodoro'
 Bundle 'xolox/vim-shell'
 Bundle 'vimoutliner/vimoutliner'
+
+" Debug
+Bundle 'joonty/vdebug'
