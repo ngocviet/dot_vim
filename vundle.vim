@@ -122,6 +122,7 @@ Bundle 'xolox/vim-misc'
 Bundle 'mnick/vim-pomodoro'
 Bundle 'xolox/vim-shell'
 Bundle 'vimoutliner/vimoutliner'
+Bundle 'vim-scripts/YankRing.vim'
 
 " Debug
 Bundle 'joonty/vdebug'
