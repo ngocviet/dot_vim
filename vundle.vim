@@ -93,6 +93,7 @@ Bundle 'leshill/vim-json'
 Bundle 'nono/vim-handlebars'
 Bundle 'othree/html5.vim'
 Bundle 'indenthtml.vim'
+Bundle 'etaoins/vim-volt-syntax'
 "   TomDoc
 Bundle 'mutewinter/tomdoc.vim'
 Bundle 'jc00ke/vim-tomdoc'
