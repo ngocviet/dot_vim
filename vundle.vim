@@ -66,6 +66,7 @@ Bundle 'christoomey/vim-tmux-navigator'
 Bundle 'dsawardekar/portkey'
 Bundle 'dsawardekar/ember.vim'
 Bundle 'rizzatti/dash.vim'
+Bundle 'wolfpython/cscope_map.vim'
 " Automatic Helpers
 Bundle 'osyo-manga/vim-anzu'
 Bundle 'xolox/vim-session'

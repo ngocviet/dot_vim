@@ -402,6 +402,37 @@ let g:rails_gem_projections = {
       \ }}
 
 " ---------------
+" cscope_map
+" ---------------
+noremap `s :cs find s <C-R>=expand("<cword>")<CR><CR>
+noremap `g :cs find g <C-R>=expand("<cword>")<CR><CR>
+noremap `c :cs find c <C-R>=expand("<cword>")<CR><CR>
+noremap `t :cs find t <C-R>=expand("<cword>")<CR><CR>
+noremap `e :cs find e <C-R>=expand("<cword>")<CR><CR>
+noremap `f :cs find f <C-R>=expand("<cfile>")<CR><CR>
+noremap `i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+noremap `d :cs find d <C-R>=expand("<cword>")<CR><CR>
+
+noremap `ss :scs find s <C-R>=expand("<cword>")<CR><CR>
+noremap `sg :scs find g <C-R>=expand("<cword>")<CR><CR>
+noremap `sc :scs find c <C-R>=expand("<cword>")<CR><CR>
+noremap `st :scs find t <C-R>=expand("<cword>")<CR><CR>
+noremap `se :scs find e <C-R>=expand("<cword>")<CR><CR>
+noremap `sf :scs find f <C-R>=expand("<cfile>")<CR><CR>
+noremap `si :scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+noremap `sd :scs find d <C-R>=expand("<cword>")<CR><CR>
+
+noremap ``s :vert scs find s <C-R>=expand("<cword>")<CR><CR>
+noremap ``g :vert scs find g <C-R>=expand("<cword>")<CR><CR>
+noremap ``c :vert scs find c <C-R>=expand("<cword>")<CR><CR>
+noremap ``t :vert scs find t <C-R>=expand("<cword>")<CR><CR>
+noremap ``e :vert scs find e <C-R>=expand("<cword>")<CR><CR>
+noremap ``f :vert scs find f <C-R>=expand("<cfile>")<CR><CR>
+noremap ``i :vert scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+noremap ``d :vert scs find d <C-R>=expand("<cword>")<CR><CR>
+
+
+" ---------------
 " ---------------
 " Voogle
 " ---------------
