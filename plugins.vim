@@ -254,7 +254,8 @@ let g:SuperTabDefaultCompletionType = '<C-n>'
 
 " UltiSnips
 " ---------------
-let g:UltiSnipsSnippetDirectories=["MyUltiSnips"]
+let g:UltiSnipsUsePythonVersion = 2
+" let g:UltiSnipsSnippetDirectories=["MyUltiSnips"]
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
