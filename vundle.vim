@@ -110,6 +110,8 @@ Bundle 'wavded/vim-stylus'
 Bundle 'tpope/vim-cucumber'
 Bundle 'chrisbra/csv.vim'
 Bundle 'digitaltoad/vim-jade'
+Bundle 'OrangeT/vim-csharp'
+Bundle 'OmniSharp/omnisharp-vim'
 " MatchIt
 Bundle 'matchit.zip'
 Bundle 'kana/vim-textobj-user'
@@ -128,3 +130,6 @@ Bundle 'vim-scripts/YankRing.vim'
 
 " Debug
 Bundle 'joonty/vdebug'
+
+" Build
+Bundle 'tpope/vim-dispatch'
