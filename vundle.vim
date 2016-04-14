@@ -111,6 +111,7 @@ Bundle 'tpope/vim-cucumber'
 Bundle 'chrisbra/csv.vim'
 Bundle 'digitaltoad/vim-jade'
 Bundle 'OrangeT/vim-csharp'
+Bundle 'OrangeT/vim-liquid'
 " MatchIt
 Bundle 'matchit.zip'
 Bundle 'kana/vim-textobj-user'
