@@ -117,7 +117,7 @@ let g:ctrlp_custom_ignore = { 'dir':  '\v[\/]\.(git|hg|svn)$', 'file': '\v\.(exe
 " ---------------
 " ctrlp cmatcher
 " ---------------
-let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
+" let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
 
 " Ensure max height isn't too large. (for performance)
 let g:ctrlp_max_height = 10
