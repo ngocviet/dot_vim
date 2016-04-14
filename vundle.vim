@@ -33,7 +33,7 @@ Bundle 'mhinz/vim-startify'
 Bundle 'mbbill/undotree'
 Bundle 'jszakmeister/vim-togglecursor'
 Bundle 'Lokaltog/vim-easymotion'
-Bundle 'vim-scripts/ShowMarks'
+Bundle 'kshenoy/vim-signature'
 " Commands
 Bundle 'mileszs/ack.vim'
 Bundle 'rstacruz/sparkup',{'rtp': 'vim'}
@@ -111,7 +111,6 @@ Bundle 'tpope/vim-cucumber'
 Bundle 'chrisbra/csv.vim'
 Bundle 'digitaltoad/vim-jade'
 Bundle 'OrangeT/vim-csharp'
-Bundle 'OmniSharp/omnisharp-vim'
 " MatchIt
 Bundle 'matchit.zip'
 Bundle 'kana/vim-textobj-user'

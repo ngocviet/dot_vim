@@ -100,6 +100,19 @@ nnoremap <silent> <leader>wo :ZoomWin<CR>
 " ---------------
 " Ensure Ctrl-P isn't bound by default
 let g:ctrlp_map = ''
+let g:ctrlp_max_files = 0
+" let g:ctrlp_user_command = "find %s -type f | egrep -v '/\.(git|hg|svn)|solr|tmp/' | egrep -v '\.(png|exe|jpg|gif|jar|class|swp|swo|log|gitkep|keepme|so|o)$'"
+" let g:ctrlp_user_command = 'find %s -type f'        " MacOSX/Linux
+let g:ctrlp_user_command = 'dir %s /-n /b /s /a-d'  " Windows
+let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_root_markers = ['pom.xml', '.sln' ]
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
+
+" let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+let g:ctrlp_custom_ignore = { 'dir':  '\v[\/]\.(git|hg|svn)$', 'file': '\v\.(exe|so|dll)$' }
+
 
 " ---------------
 " ctrlp cmatcher
@@ -517,7 +530,7 @@ let g:airline#extensions#anzu#enabled = 1
 " vimwiki
 " ---------------
 let wiki_1 = {}
-let wiki_1.path = 'D:\onlinedrive\BoxSync\vimwiki'
+let wiki_1.path = 'D:\onlinedrive\Box Sync\vimwiki'
 " let wiki_1.html_template = 'D:\onlinedrive\BoxSync\vimwiki_html\templates\header.tpl'
 let wiki_1.nested_syntaxes = {'python':'python', 'c++':'cpp'}
 let g:vimwiki_list = [wiki_1]
